@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" type="text/css" href="css/960.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default back-color nav-height navbar-fixed-top">
+        <!-- <div class="container-fluid"> -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <h1>Olympics</h1>
+        <!-- </div> -->
+    </nav>
+    <div class="carousel slide" id="heroCarousel">
+        <div class="carousel-inner">
+            <img src="images/rio_l.jpg">
+        </div>
+    </div>
+    <div class="Container grid_12">
+        <div class="row">
+            <div class="col-lg-6 random-margin">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for country Data" id="search">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="btnSearch">Fetch!</button>
+                    <button class="btn btn-default" id="btnload">Load</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary random-margin">
+            <div class="panel-heading ">Medal Tally
+                <a href="#add" roll="button" class="btn btn-primary" data-toggle="modal" id="Countrydetail">Add Country Detail!</a>
+            </div>
+            <!-- Table -->
+            <div id="tblwrap">
+                <table class=" table tableborder">
+                </table>
+            </div>
+        </div >
+        <div class="modal fade" roll="dialog" id="detail">
+            <div class="modal-dialog" roll="document">
+                <div class="modal-content">
+                    <div class="modal-header panel-color">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Medal Telly</h4>
+                        <a href="#addPlayer" roll="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">Add Players Detail!</a>
+                    </div>
+                    <div class="modal-body">
+                        <table class="tableborder" id="modaltable">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--second modal-->
+        <div class="modal fade" roll="dialog" id="add">
+            <div class="modal-dialog" roll="document">
+                <div class="modal-content">
+                    <div class="modal-header panel-color">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add/Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="Cname">Country Name:</label>
+                                <input type="text" class="form-control" id="Cname" placeholder="country Name" (required)>
+                            </div>
+                            <div class="form-group">
+                                <label for="Cid">ID</label>
+                                <input type="number" class="form-control" id="Cid" placeholder="Enter id of country ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Crank">Rank</label>
+                                <input type="number" class="form-control" id="Crank" placeholder="Enter Rank of country ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Tmedals">Total Medals</label>
+                                <input type="number" class="form-control" id="Tmedals" placeholder="Enter Medals ">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="addCountry">Add</button>
+                            <button type="submit" class="btn btn-default" id="updateCountry">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--third Modal-->
+        <div class="modal fade" roll="dialog" id="addPlayer">
+            <div class="modal-dialog" roll="document">
+                <div class="modal-content">
+                    <div class="modal-header panel-color">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add/Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="Pid">Id</label>
+                                <input type="number" class="form-control" id="Pid" placeholder="Enter Id">
+                            </div>
+                            <div class="form-group">
+                                <label for="PCname">Country Name</label>
+                                <input type="text" class="form-control" id="PCname" placeholder="Enter Country of player ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pname">Player Name</label>
+                                <input type="text" class="form-control" id="Pname" placeholder="Enter name of player ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pmedal">Medal</label>
+                                <input type="text" class="form-control" id="Pmedal" placeholder="Enter medal for player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="PEye">Eye Color</label>
+                                <input type="text" class="form-control" id="PEye" placeholder="Enter eye color of player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Psport">Sports</label>
+                                <input type="text" class="form-control" id="Psport" placeholder="Enter sport of player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pevent">Event</label>
+                                <input type="text" class="form-control" id="Pevent" placeholder="Enter event for player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pdate">date</label>
+                                <input type="date" class="form-control" id="Pdate" placeholder="Enter date of game  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pimage">Image</label>
+                                <input type="url" class="form-control" id="Pimage" placeholder="Enter image of  player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Page">Age</label>
+                                <input type="number" class="form-control" id="Page" placeholder="Enter age of player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pgender">Gender</label>
+                                <input type="text" class="form-control" id="Pgender" placeholder="Enter gender of player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pno">Phone number</label>
+                                <input type="tel" class="form-control" id="Pno" placeholder="Enter phone number of player  ">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pabout">About</label>
+                                <input type="text" class="form-control" id="Pabout" placeholder="Enter somthing about player  ">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="addPlayers">Add</button>
+                            <button type="submit" class="btn btn-default" id="updatePlayers">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container-->
+    <footer>
+    </footer>
+    <!-- <script type="text/javascript" src="js/pagination.js"></script> -->
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
