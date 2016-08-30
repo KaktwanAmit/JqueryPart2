@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" type="text/css" href="css/960.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body ng-app="olympic">
+    <nav class="navbar navbar-default back-color nav-height navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <h1>Olympics</h1>
+        <!-- </div> -->
+    </nav>
+    <div class="carousel slide" id="heroCarousel">
+        <div class="carousel-inner">
+            <img src="images/rio_l.jpg">
+        </div>
+    </div>
+<div ng-controller="mycon">
+        <div class="row">
+            <div class="col-lg-6 random-margin">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search player by id" ng-model="txtSearch">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="fetchPlayer(txtSearch)">Fetch!</button>
+                    <button class="btn btn-default" id="btnload" ng-click="loadAll()">Load</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary random-margin">
+            <div class="panel-heading ">Medal Tally
+                <a href="#addPlayer" roll="button" class="btn btn-primary" data-toggle="modal" id="Countrydetail" ng-click="addPlay()">Add Player Details!</a>
+            </div>
+        </div>
+        <!-- Table -->
+
+        <div>
+            <table class="table-responsive">
+                <thead>
+                <!-- {{players.length}} -->
+                    <tr ng-repeat="player in players" ng-if="$first">
+                        <th ng-repeat="(k, v) in player">{{k}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="player in players">
+                        <td ng-repeat="(k, v) in player">{{v}}
+                            </td>
+                        <td>
+                            <button data-target="#addPlayer" data-toggle="modal" ng-click="edit(player.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button ng-click="delete(player.id)"><span class="glyphicon glyphicon-trash" ></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary pull-left" ng-click="prevVal()" ng-show="prev" >prev</button>
+                <button type="button" class="btn btn-primary pull-right" ng-click="nextVal()" ng-show="next">next</button>
+        </div>
+    
+        <!-- modal controller -->
+        <!-- <div ng-controller="operation"> -->
+        <div class="modal fade" roll="dialog" id="detail">
+            <div class="modal-dialog" roll="document">
+                <div class="modal-content">
+                    <div class="modal-header panel-color">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Medal Telly</h4>
+                        <a href="#addPlayer" roll="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" >Add Players Detail!</a>
+                    </div>
+                    <div class="modal-body">
+                        <table class="tableborder" id="modaltable">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <my-crud></my-crud>
+    </div>
+    <!-- Footer-->
+    <footer>
+    </footer>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/Maincontroller.js"></script>
+    <!-- <script type="text/javascript" src="js/fetchService.js"></script> -->
+    <!-- <script type="text/javascript" src="js/LoadAllservice.js"></script> -->
+    <!-- <script type="text/javascript" src="js/editService.js"></script> -->
+    <!-- <script type="text/javascript" src="js/deleteService.js"></script> -->
+    <!-- <script type="text/javascript" src="js/addPLayerService.js"></script> -->
+    <!-- <script type="text/javascript" src="js/updateService.js"></script> -->
+    <script type="text/javascript" src="js/Service.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<div class="modal fade" roll="dialog" id="addPlayer">
+            <div class="modal-dialog" roll="document">
+                <div class="modal-content">
+                    <div class="modal-header panel-color">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add/Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="Pid">Id</label>
+                                <input type="number" class="form-control" placeholder="Enter Id" ng-model="Details.id">
+                            </div>
+                            <div class="form-group">
+                                <label for="PCname">Country Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Country of player " ng-model="Details.CountryName">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pname">Player Name</label>
+                                <input type="text" class="form-control" placeholder="Enter name of player " ng-model="Details.Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pmedal">Medal</label>
+                                <input type="text" class="form-control" placeholder="Enter medal for player  " ng-model="Details.Medal">
+                            </div>
+                            <div class="form-group">
+                                <label for="PEye">Eye Color</label>
+                                <input type="text" class="form-control" placeholder="Enter eye color of player  " ng-model="Details.EyeColor">
+                            </div>
+                            <div class="form-group">
+                                <label for="Psport">Sports</label>
+                                <input type="text" class="form-control" placeholder="Enter sport of player  " ng-model="Details.Sports">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pevent">Event</label>
+                                <input type="text" class="form-control" placeholder="Enter event for player  " ng-model="Details.Event">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pdate">date</label>
+                                <input type="text" class="form-control" placeholder="Enter date of game  " ng-model="Details.Date">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pimage">Image</label>
+                                <input type="url" class="form-control" placeholder="Enter image of  player  " ng-model="Details.Picture">
+                            </div>
+                            <div class="form-group">
+                                <label for="Page">Age</label>
+                                <input type="number" class="form-control" placeholder="Enter age of player  " ng-model="Details.Age">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pgender">Gender</label>
+                                <input type="text" class="form-control" placeholder="Enter gender of player  " ng-model="Details.Gender">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pno">Phone number</label>
+                                <input type="tel" class="form-control" placeholder="Enter phone number of player  " ng-model="Details.phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="Pabout">About</label>
+                                <input type="text" class="form-control" placeholder="Enter somthing about player  " ng-model="Details.About">
+                            </div>
+                            <button type="submit" class="btn btn-default" ng-click="addPlayers()">Add</button>
+                            <button type="submit" class="btn btn-default" id="updatePlayers" ng-click="updatePlayers(Details.id,Details)">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
